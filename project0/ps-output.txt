@@ -1,0 +1,32 @@
+UID          PID    PPID  C STIME TTY          TIME CMD
+root           1       0  0 11:07 ?        00:00:01 /sbin/init
+root           2       1  0 11:07 ?        00:00:00 /init
+root           5       2  0 11:07 ?        00:00:00 plan9 --control-socket 6 --log-level 4 --server-fd 7 --pipe-fd 9 --log-truncate
+root          46       1  0 11:07 ?        00:00:00 /lib/systemd/systemd-journald
+root          71       1  0 11:07 ?        00:00:00 /lib/systemd/systemd-udevd
+root          82       1  0 11:07 ?        00:00:00 snapfuse /var/lib/snapd/snaps/bare_5.snap /snap/bare/5 -o ro,nodev,allow_other,suid
+root          83       1  0 11:07 ?        00:00:02 snapfuse /var/lib/snapd/snaps/core22_607.snap /snap/core22/607 -o ro,nodev,allow_other,suid
+root          84       1  0 11:07 ?        00:00:00 snapfuse /var/lib/snapd/snaps/gtk-common-themes_1535.snap /snap/gtk-common-themes/1535 -o ro,nodev,allow_other,suid
+root          90       1  1 11:07 ?        00:00:07 snapfuse /var/lib/snapd/snaps/snapd_18933.snap /snap/snapd/18933 -o ro,nodev,allow_other,suid
+root          91       1  0 11:07 ?        00:00:03 snapfuse /var/lib/snapd/snaps/ubuntu-desktop-installer_967.snap /snap/ubuntu-desktop-installer/967 -o ro,nodev,allow_other,suid
+systemd+      98       1  0 11:07 ?        00:00:00 /lib/systemd/systemd-resolved
+root         126       1  0 11:07 ?        00:00:00 /usr/sbin/cron -f -P
+message+     128       1  0 11:07 ?        00:00:00 @dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+root         156       1  0 11:07 ?        00:00:00 /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers
+syslog       166       1  0 11:07 ?        00:00:00 /usr/sbin/rsyslogd -n -iNONE
+root         167       1  0 11:07 ?        00:00:01 /usr/lib/snapd/snapd
+root         168       1  0 11:07 ?        00:00:00 /lib/systemd/systemd-logind
+root         192       1  0 11:07 ?        00:00:00 /bin/bash /snap/ubuntu-desktop-installer/967/bin/subiquity-server
+root         197       1  0 11:07 hvc0     00:00:00 /sbin/agetty -o -p -- \u --noclear --keep-baud console 115200,38400,9600 vt220
+root         199       1  0 11:07 tty1     00:00:00 /sbin/agetty -o -p -- \u --noclear tty1 linux
+root         213       1  0 11:07 ?        00:00:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+root         399     192  1 11:07 ?        00:00:07 /snap/ubuntu-desktop-installer/967/usr/bin/python3.10 -m subiquity.cmd.server --use-os-prober --storage-version=2 --postinst-hooks-dir=/snap/ubuntu-desktop-installer/967/etc/subiquity/postinst.d
+root         403       2  0 11:07 ?        00:00:00 /init
+root         404     403  0 11:07 ?        00:00:00 /init
+debhole      407     404  0 11:07 pts/0    00:00:00 -bash
+root         408       2  0 11:07 pts/1    00:00:00 /bin/login -f
+debhole      442       1  0 11:07 ?        00:00:00 /lib/systemd/systemd --user
+debhole      443     442  0 11:07 ?        00:00:00 (sd-pam)
+debhole      449     408  0 11:07 pts/1    00:00:00 -bash
+root         462     399  0 11:07 ?        00:00:04 python3 /snap/ubuntu-desktop-installer/967/usr/bin/cloud-init status --wait
+debhole      859     407  0 11:19 pts/0    00:00:00 ps -ef
