@@ -99,7 +99,7 @@ int main(int argc, char **argv) {
 		bool placed = false;
 
 		for(int k = 0; k < sym_num_weights.size(); k += 1) {
-			if (sym_num_weights[k].first < weight) {
+			if (sym_num_weights[k].first > weight) {
 				placed = true;
 				sym_num_weights.insert(sym_num_weights.begin() + k, make_pair(weight, num + '0'));
 				break;
@@ -120,7 +120,7 @@ int main(int argc, char **argv) {
 		bool placed = false;
 
 		for (int k = 0; k < sym_num_weights.size(); k+= 1) {
-			if (sym_num_weights[k].first < weight) {
+			if (sym_num_weights[k].first > weight) {
 				placed = true;
 				sym_num_weights.insert(sym_num_weights.begin() + k, make_pair(weight, sym));
 				break;
@@ -132,17 +132,18 @@ int main(int argc, char **argv) {
 		}
 	}
 
-	// Add the symbols and numbers to their respective 'betweens'
-	for (pair<int, char> p : sym_num_weights) {
-		betweens[p.first / 100].push_back(p.second);
-	}
-
 	// Print result
-	cout << betweens[0];
 	for (int i = 0; i < num_words; i += 1) {
-		cout << chosen_words[i] << "" << betweens[i+1];
+		for (pair<int, char> p : sym_num_weights) {
+			if ((p.first >= 100 * i) && (p.first < 100 * (i+1))) cout << p.second;
+		}
+
+		cout << chosen_words[i];
 	}
-	cout << std::endl;
+	for (pair<int, char> p : sym_num_weights) {
+		if (p.first >= 500) cout << p.second;
+	}
+	cout << endl;
 
 	return 0;
 }
